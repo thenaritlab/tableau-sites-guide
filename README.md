@@ -106,11 +106,11 @@ flowchart TD
 | 🔒 | **แยกข้อมูลเด็ดขาด** | Content แต่ละ Site แยกขาดจากกัน User ของ Site หนึ่งมองไม่เห็นข้อมูลของอีก Site |
 | 👥 | **แยกการบริหาร** | แต่ละ Site มี Site Admin, Site Role, Permission และตาราง Extract Refresh ของตัวเอง |
 | 🌐 | **URL แยก** | ทำเป็น Portal เฉพาะให้แต่ละกลุ่มผู้ใช้ได้ |
-| 🎫 | **ไม่ต้องซื้อ License ซ้ำ** *(Tableau Server)* | ผู้ใช้ 1 คนใช้ 1 License ไม่ว่าอยู่กี่ Site (นับตาม Site Role สูงสุด) |
+| 🎫 | **ไม่ต้องซื้อ License ซ้ำ** | ผู้ใช้ 1 คนเข้าได้หลาย Site โดยไม่ต้องมี License แยกต่อ Site (รายละเอียดดู [คำถามที่พบบ่อย](#-คำถามที่พบบ่อย)) |
 | 🔑 | **Login ครั้งเดียว** | ใช้ Credential เดียวกัน แล้วเลือก Site ตอน Sign in |
 | 🏛️ | **บริหารรวมศูนย์** *(Tableau Cloud)* | Cloud Admin ดูแลทุก Site และ License ได้จาก Tableau Cloud Manager ที่เดียว |
 
-📎 อ้างอิง: [Sites Overview](https://help.tableau.com/current/server/en-us/sites_intro.htm) · [Use Tableau Cloud Manager](https://help.tableau.com/current/online/en-gb/cloud_manager_intro.htm)
+📎 อ้างอิง: [Sites Overview](https://help.tableau.com/current/server/en-us/sites_intro.htm) · [Use Tableau Cloud Manager](https://help.tableau.com/current/online/en-gb/cloud_manager_intro.htm) · [What is Tableau Cloud Manager?](https://www.tableau.com/blog/what-is-tableau-cloud-manager)
 
 ---
 
@@ -210,10 +210,20 @@ A: Tableau แนะนำให้ใช้ **Project** สำหรับ Work
 **Q: Tableau Cloud Standard มีได้กี่ Site?**
 A: สูงสุด 3 Site (Enterprise 10, Cloud+ และ Tableau+ Bundle 50)
 
-> [!CAUTION]
-> เรื่อง **"1 License ต่อ User ไม่ว่าอยู่กี่ Site"** มาจากเอกสารของ **Tableau Server** ส่วนบน **Tableau Cloud** เอกสาร Tableau Cloud Manager ระบุเพียงว่าดูการใช้ License ข้ามหลาย Site ได้ ควรยืนยันเงื่อนไข License กับ Tableau ก่อนนำไปใช้อ้างอิง
+**Q: User 1 คนที่อยู่หลาย Site ต้องใช้ License กี่ตัว?**
+A: **ใช้ 1 License ไม่ต้องซื้อแยกตาม Site** ทั้งบน Tableau Server และ Tableau Cloud แต่รายละเอียดที่ Tableau ระบุไว้ต่างกันเล็กน้อย
 
-📎 อ้างอิง: [Sites Overview](https://help.tableau.com/current/server/en-us/sites_intro.htm) · [Use Tableau Cloud Manager](https://help.tableau.com/current/online/en-gb/cloud_manager_intro.htm) · [Tableau Cloud Pricing](https://www.tableau.com/pricing/cloud)
+| | 🖥️ Tableau Server | ☁️ Tableau Cloud (Tableau Cloud Manager) |
+|---|---|---|
+| **จำนวน License** | 1 License ต่อ User ไม่ว่าอยู่กี่ Site | ให้ User เข้าหลาย Site ได้ **โดยไม่ต้องมี License แยกสำหรับแต่ละ Site** |
+| **ประเภท License ที่ใช้** | ตาม **Site Role สูงสุด** ที่ User มีบน Server | Tableau ไม่ได้ระบุกฎนี้ไว้ในเอกสาร Tableau Cloud Manager |
+| **การควบคุม** | Server Administrator | Cloud Admin จัดการ License รวมที่ระดับ Tenant และกำหนด **Site Role Limits** เพื่อจำกัดจำนวน License ที่แต่ละ Site ใช้ได้ |
+
+> [!NOTE]
+> - Cloud Admin ที่ไม่มี Site Role ใน Site ใด **ไม่ใช้ License** ของ Tableau Cloud
+> - บน Tableau Cloud ถ้า License ใน Tenant ไม่พอ User ที่เกินจะถูกตั้งเป็น **Unlicensed** ใน Site นั้น ต้องปรับ Site Role Limits ข้าม Site เพื่อให้ได้ License
+
+📎 อ้างอิง: [Sites Overview](https://help.tableau.com/current/server/en-us/sites_intro.htm) · [What is Tableau Cloud Manager? (Tableau Blog)](https://www.tableau.com/blog/what-is-tableau-cloud-manager) · [Cloud Administrator Role and Tasks](https://help.tableau.com/current/online/en-us/cloud_manager_admin.htm) · [Add, Rename, Delete, or Activate Sites](https://help.tableau.com/current/online/en-us/cloud_manager_sites.htm) · [Tableau Cloud Pricing](https://www.tableau.com/pricing/cloud)
 
 ---
 
@@ -225,6 +235,9 @@ A: สูงสุด 3 Site (Enterprise 10, Cloud+ และ Tableau+ Bundle 50
 |---|---|
 | [Sites Overview – Tableau Server](https://help.tableau.com/current/server/en-us/sites_intro.htm) | Site คืออะไร, สิ่งที่แยก/ใช้ร่วม, Site หรือ Project, ข้อควรระวัง |
 | [Use Tableau Cloud Manager](https://help.tableau.com/current/online/en-gb/cloud_manager_intro.htm) | Tenant, Tableau Cloud Manager, บทบาท Cloud Admin |
+| [What is Tableau Cloud Manager? (Tableau Blog)](https://www.tableau.com/blog/what-is-tableau-cloud-manager) | User เข้าหลาย Site โดยไม่ต้องมี License แยกต่อ Site |
+| [Cloud Administrator Role and Tasks](https://help.tableau.com/current/online/en-us/cloud_manager_admin.htm) | Cloud Admin, Site Role Limits, การใช้ License |
+| [Add, Rename, Delete, or Activate Sites](https://help.tableau.com/current/online/en-us/cloud_manager_sites.htm) | การจัดการ Site และ License เมื่อ Activate Site |
 | [Tableau Cloud Pricing](https://www.tableau.com/pricing/cloud) | จำนวน Site ตาม Edition |
 | [Tableau Cloud Site Capacity](https://help.tableau.com/current/online/en-us/cloud_manager_capacity_site.htm) | Storage ต่อ Site |
 
