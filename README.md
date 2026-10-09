@@ -9,6 +9,13 @@
 > [!IMPORTANT]
 > **อัปเดตล่าสุด: 9 ตุลาคม 2026** เนื้อหาอ้างอิงจากเอกสารทางการของ **Tableau** โดยมีลิงก์อ้างอิงกำกับไว้ใต้แต่ละหัวข้อ
 
+> [!NOTE]
+> **⚖️ ข้อจำกัดความรับผิดชอบ (Disclaimer)**
+>
+> เอกสารนี้จัดทำขึ้นจากการรวบรวมข้อมูลโดยส่วนตัวของผู้เขียน เพื่อวัตถุประสงค์ในการแบ่งปันความรู้เท่านั้น มิใช่เอกสารทางการของเจ้าของผลิตภัณฑ์ และไม่สามารถใช้เป็นเอกสารอ้างอิงทางการค้าได้ หากต้องการนำข้อมูลไปใช้อ้างอิง กรุณาตรวจสอบข้อมูลล่าสุดจากเว็บไซต์ทางการของเจ้าของผลิตภัณฑ์อีกครั้ง
+>
+> *This document is a personal compilation intended for knowledge-sharing purposes only. It is not official documentation from the product owner and shall not be used as a commercial reference. Please verify all information against the product owner's official website before use.*
+
 ---
 
 ## 🧭 สารบัญ
@@ -244,5 +251,12 @@ A: **ใช้ 1 License ไม่ต้องซื้อแยกตาม Sit
 ---
 
 [⬆️ กลับไปด้านบน](#-tableau-site-คืออะไร-ข้อดี-ข้อเสีย-และการประยุกต์ใช้งาน)
+
+> [!NOTE]
+> **⚖️ ข้อจำกัดความรับผิดชอบ (Disclaimer)**
+>
+> เอกสารนี้จัดทำขึ้นจากการรวบรวมข้อมูลโดยส่วนตัวของผู้เขียน เพื่อวัตถุประสงค์ในการแบ่งปันความรู้เท่านั้น มิใช่เอกสารทางการของเจ้าของผลิตภัณฑ์ และไม่สามารถใช้เป็นเอกสารอ้างอิงทางการค้าได้ หากต้องการนำข้อมูลไปใช้อ้างอิง กรุณาตรวจสอบข้อมูลล่าสุดจากเว็บไซต์ทางการของเจ้าของผลิตภัณฑ์อีกครั้ง
+>
+> *This document is a personal compilation intended for knowledge-sharing purposes only. It is not official documentation from the product owner and shall not be used as a commercial reference. Please verify all information against the product owner's official website before use.*
 
 **Created by The Narit Lab**
